@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: gray;
+            color: white;
+            position: absolute;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #message img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>¿Quieres ser mi San Valentín? ❤️</h2>
+        <div class="buttons">
+            <button class="yes" onclick="mostrarMensaje()">Sí</button>
+            <button class="no" onmouseover="moverBoton(this)">No</button>
+        </div>
+    </div>
+    <div id="message">
+        <h2>¡Mi novia es la mejor del mundo! ❤️</h2>
+        <p>No hay nadie como tú, eres la persona más increíble que conozco y estoy muy feliz de tenerte en mi vida.</p>
+        <p>Eres atenta, siempre preocupándote por los demás y brindando amor en cada detalle. Eres trabajadora, luchas cada día por tus sueños y me inspiras a ser mejor. Tu alegría ilumina cualquier lugar, con tu sonrisa contagias felicidad y haces que cada momento sea especial.</p>
+        <p>Estoy agradecido por cada instante a tu lado, por tu cariño, por tu apoyo incondicional y por ser la persona maravillosa que eres. No hay mejor regalo en la vida que tenerte a mi lado.</p>
+        <img src="IMG-20250101-WA0150.jpg" alt="Imagen de amor 1">
+        <img src="Screenshot_20250104_212954_WhatsApp.jpg" alt="Imagen de amor 2">
+        <img src="IMG-20241023-WA0007.jpg" alt="Imagen de amor 3">
+    </div>
+    <script>
+        function moverBoton(boton) {
+            console.log("El botón 'No' se ha intentado presionar.");
+            let x = Math.random() * (window.innerWidth - boton.clientWidth);
+            let y = Math.random() * (window.innerHeight - boton.clientHeight);
+            boton.style.left = `${x}px`;
+            boton.style.top = `${y}px`;
+        }
+
+        function mostrarMensaje() {
+            console.log("El botón 'Sí' ha sido presionado. Mostrando mensaje de amor.");
+            document.querySelector('.card').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
